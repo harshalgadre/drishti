@@ -5,6 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import AppLogo from "./AppLogo";
 import Icon, { IconName } from "./Icon";
+import ThemeToggle from "./ThemeToggle";
 
 interface NavLink {
   name: string;
@@ -26,7 +27,13 @@ export const Navbar: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-[#0b1523]/95 backdrop-blur-md border-b border-border shadow-xl">
+    <header className="sticky top-0 z-50 w-full bg-card/95 backdrop-blur-md border-b border-border shadow-md">
+      <div className="hidden sm:block bg-primary text-primary-foreground">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-7 flex items-center justify-between text-[11px] font-semibold">
+          <span>Government of Meghalaya Disaster Risk Monitoring Portal</span>
+          <span>Emergency: 112 | State Control Room</span>
+        </div>
+      </div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo */}
@@ -46,7 +53,7 @@ export const Navbar: React.FC = () => {
                   href={item.href}
                   className={`flex items-center gap-2 px-3.5 py-2 rounded-lg text-xs lg:text-sm font-semibold transition-all relative ${
                     isActive
-                      ? "text-primary bg-primary/15 shadow-[0_0_12px_rgba(0,200,255,0.25)] border border-primary/40"
+                      ? "text-primary bg-primary/10 border border-primary/30"
                       : "text-muted-foreground hover:text-foreground hover:bg-muted/60"
                   }`}
                 >
@@ -69,17 +76,19 @@ export const Navbar: React.FC = () => {
           {/* Right Action Group */}
           <div className="flex items-center gap-3">
             {/* Live Monitoring Badge */}
-            <div className="hidden sm:flex items-center gap-2 bg-success/15 border border-success/40 rounded-full px-3 py-1 shadow-[0_0_10px_rgba(0,230,118,0.2)]">
+            <div className="hidden sm:flex items-center gap-2 bg-success/10 border border-success/40 rounded-md px-3 py-1">
               <span className="w-2 h-2 rounded-full bg-success animate-ping" />
               <span className="text-success text-[11px] font-black tracking-wider">
                 LIVE MONITORING
               </span>
             </div>
 
+            <ThemeToggle />
+
             {/* Quick Report Action Button on Desktop */}
             <Link
               href="/report"
-              className="hidden lg:flex items-center gap-1.5 bg-primary hover:bg-primary/90 active:scale-95 text-primary-foreground font-black text-xs px-4 py-2 rounded-lg shadow-[0_0_14px_rgba(0,200,255,0.35)] transition-all"
+              className="hidden lg:flex items-center gap-1.5 bg-primary hover:bg-primary/90 active:scale-95 text-primary-foreground font-black text-xs px-4 py-2 rounded-md shadow-sm transition-all"
             >
               <Icon name="plus" size={13} strokeWidth={3} />
               <span>SUBMIT REPORT</span>
@@ -88,7 +97,7 @@ export const Navbar: React.FC = () => {
             {/* Emergency SOS Dialer */}
             <a
               href="tel:112"
-              className="flex items-center gap-1.5 bg-danger/20 hover:bg-danger/30 border border-danger/50 text-danger text-xs font-bold px-3 py-1.5 rounded-lg transition-all shadow-[0_0_10px_rgba(255,61,61,0.3)]"
+              className="flex items-center gap-1.5 bg-danger/10 hover:bg-danger/15 border border-danger/50 text-danger text-xs font-bold px-3 py-1.5 rounded-md transition-all"
               title="Emergency SOS Call"
             >
               <Icon name="phone" size={13} />
@@ -99,7 +108,7 @@ export const Navbar: React.FC = () => {
             <button
               type="button"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg bg-secondary hover:bg-muted text-foreground transition-colors"
+              className="md:hidden p-2 rounded-md bg-secondary hover:bg-muted text-foreground transition-colors"
               aria-label="Toggle Menu"
             >
               <Icon name={isMobileMenuOpen ? "x" : "layers"} size={20} />

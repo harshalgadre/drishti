@@ -4,13 +4,13 @@ import Icon from "./Icon";
 
 export const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-[#08101a] border-t border-border mt-auto pt-10 pb-8 text-xs text-muted-foreground">
+    <footer className="w-full bg-card border-t border-border mt-auto pt-10 pb-8 text-xs text-muted-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand & Purpose */}
           <div className="space-y-3 md:col-span-1">
             <div className="flex items-center gap-2 text-foreground font-black text-base">
-              <span className="w-2.5 h-2.5 rounded-full bg-primary shadow-[0_0_8px_#00c8ff]" />
+              <span className="w-2.5 h-2.5 rounded-full bg-primary" />
               <span>BhuRakshak AI</span>
             </div>
             <p className="text-xs text-muted-foreground leading-relaxed">

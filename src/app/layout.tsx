@@ -16,8 +16,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark">
-      <body className="bg-[#09111e] text-foreground antialiased font-body min-h-screen flex flex-col">
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-background text-foreground antialiased font-body min-h-screen flex flex-col">
         {/* Full Desktop & Tablet Responsive Header */}
         <Navbar />
 

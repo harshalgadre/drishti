@@ -28,7 +28,7 @@ export const AppLogo: React.FC<AppLogoProps> = ({
     >
       <div
         style={{ width: `${iconSize}px`, height: `${iconSize}px` }}
-        className="bg-primary shadow-[0_0_15px_rgba(0,200,255,0.4)] rounded-md flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
+        className="bg-primary rounded-md flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:scale-105"
       >
         <svg
           width={svgSize}
@@ -40,18 +40,20 @@ export const AppLogo: React.FC<AppLogoProps> = ({
           {/* Shield outline */}
           <path
             d="M12 2L3 8v8l9 6 9-6V8L12 2z"
-            stroke="#0d1b2e"
+            stroke="currentColor"
             strokeWidth="1.8"
             strokeLinejoin="round"
             fill="none"
+            className="text-primary-foreground"
           />
           {/* Mountain ridge representing terrain analysis */}
           <path
             d="M6 14l4-5 3 3 3-4 4 4"
-            stroke="#0d1b2e"
+            stroke="currentColor"
             strokeWidth="1.8"
             strokeLinecap="round"
             strokeLinejoin="round"
+            className="text-primary-foreground"
           />
         </svg>
       </div>

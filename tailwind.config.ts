@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,38 +10,38 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0d1b2e",
-        foreground: "#e8f4fd",
-        border: "#1e3a5f",
-        input: "#112240",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
+        border: "hsl(var(--border))",
+        input: "hsl(var(--input))",
         primary: {
-          DEFAULT: "#00c8ff",
-          foreground: "#0d1b2e",
+          DEFAULT: "hsl(var(--primary))",
+          foreground: "hsl(var(--primary-foreground))",
         },
         secondary: {
-          DEFAULT: "#1a3a5c",
-          foreground: "#e8f4fd",
+          DEFAULT: "hsl(var(--secondary))",
+          foreground: "hsl(var(--secondary-foreground))",
         },
         muted: {
-          DEFAULT: "#162e4a",
-          foreground: "#6b9ab8",
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
         },
         card: {
-          DEFAULT: "#0f2035",
-          foreground: "#e8f4fd",
+          DEFAULT: "hsl(var(--card))",
+          foreground: "hsl(var(--card-foreground))",
         },
-        danger: "#ff3d3d",
-        warning: "#ffb020",
-        success: "#00e676",
-        critical: "#ff3d3d",
-        high: "#ff7a00",
-        moderate: "#ffb020",
-        safe: "#00e676",
+        danger: "hsl(var(--danger))",
+        warning: "hsl(var(--warning))",
+        success: "hsl(var(--success))",
+        critical: "hsl(var(--danger))",
+        high: "hsl(var(--high))",
+        moderate: "hsl(var(--warning))",
+        safe: "hsl(var(--success))",
       },
       fontFamily: {
-        body: ["var(--font-space-grotesk)", "sans-serif"],
-        headings: ["var(--font-space-grotesk)", "sans-serif"],
-        sans: ["var(--font-space-grotesk)", "sans-serif"],
+        body: ["var(--font-inter)", "sans-serif"],
+        headings: ["var(--font-inter)", "sans-serif"],
+        sans: ["var(--font-inter)", "sans-serif"],
       },
       keyframes: {
         pulseGlow: {

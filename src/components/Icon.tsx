@@ -31,6 +31,8 @@ export type IconName =
   | "clock"
   | "phone"
   | "shield"
+  | "sun"
+  | "moon"
   | "x";
 
 interface IconProps {
@@ -197,6 +199,15 @@ export const Icon: React.FC<IconProps> = ({
         );
       case "shield":
         return <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />;
+      case "sun":
+        return (
+          <>
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2m0 16v2m10-10h-2M4 12H2m17.07-7.07l-1.41 1.41M6.34 17.66l-1.41 1.41m14.14 0l-1.41-1.41M6.34 6.34L4.93 4.93" />
+          </>
+        );
+      case "moon":
+        return <path d="M20.99 12.79A9 9 0 1 1 11.21 3a7 7 0 0 0 9.78 9.79z" />;
       case "x":
         return <path d="M18 6L6 18M6 6l12 12" />;
       default:

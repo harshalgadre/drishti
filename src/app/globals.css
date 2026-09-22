@@ -7,16 +7,57 @@
 :root {
   --font-space-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-inter: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --background: #0d1b2e;
-  --foreground: #e8f4fd;
+  --background: 210 33% 98%;
+  --foreground: 215 32% 17%;
+  --border: 213 20% 82%;
+  --input: 210 40% 96%;
+  --card: 0 0% 100%;
+  --card-foreground: 215 32% 17%;
+  --primary: 215 74% 28%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 210 26% 91%;
+  --secondary-foreground: 215 32% 17%;
+  --muted: 210 28% 94%;
+  --muted-foreground: 215 18% 41%;
+  --danger: 355 74% 45%;
+  --warning: 38 86% 43%;
+  --success: 151 61% 32%;
+  --high: 22 86% 48%;
+  color-scheme: light;
+}
+
+.dark {
+  --background: 214 46% 10%;
+  --foreground: 210 40% 96%;
+  --border: 215 34% 24%;
+  --input: 215 40% 16%;
+  --card: 214 42% 13%;
+  --card-foreground: 210 40% 96%;
+  --primary: 199 93% 55%;
+  --primary-foreground: 214 46% 10%;
+  --secondary: 214 36% 20%;
+  --secondary-foreground: 210 40% 96%;
+  --muted: 215 35% 18%;
+  --muted-foreground: 209 28% 68%;
+  --danger: 355 91% 61%;
+  --warning: 38 100% 56%;
+  --success: 151 86% 43%;
+  --high: 25 95% 53%;
+  color-scheme: dark;
 }
 
 body {
   color: var(--foreground);
-  background: #070e17;
-  font-family: var(--font-space-grotesk);
+  background:
+    linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+  font-family: var(--font-inter);
   overflow-x: hidden;
   min-height: 100vh;
+}
+
+.dark body {
+  background:
+    linear-gradient(180deg, hsl(214 50% 8%) 0%, hsl(var(--background)) 100%);
 }
 
 /* Custom animated risk marker pins for GIS Map */
@@ -110,12 +151,12 @@ body {
   height: 5px;
 }
 ::-webkit-scrollbar-track {
-  background: #0d1b2e;
+  background: hsl(var(--background));
 }
 ::-webkit-scrollbar-thumb {
-  background: #1e3a5f;
+  background: hsl(var(--border));
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00c8ff;
+  background: hsl(var(--primary));
 }
